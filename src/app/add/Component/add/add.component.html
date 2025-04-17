@@ -1,0 +1,18 @@
+ <form [formGroup]="userDetails"  (submit)="onAdding()">
+    <label>Name</label>
+    <input type="text" formControlName="name"><br>
+
+    <br>
+    {{userDetails.get('name')?.errors | json}}
+    <br>
+
+
+    <label>Age</label>
+    <input type="number" formControlName="age">
+
+    <br>
+    {{userDetails.get('age')?.errors | json}}
+    <br>
+    <button type="submit" [disabled]="userDetails.invalid">Submit</button>
+</form>
+
